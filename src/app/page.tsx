@@ -82,7 +82,7 @@ export default function HomePage() {
           <div className="!bg-peach p-10s">
             <div className="flex flex-col gap-6 md:flex-row md:items-center">
               <div>
-                <h2 className="text-2xl pb-3 font-bold text-center">T'as une question ?</h2>
+                <h2 className="text-2xl pb-3 font-bold text-center">T&apos;as une question ?</h2>
                 <p className="text-xl">
                   Des professionnels de santé et un forum de discussion libres et anonymes pour vous écouter et répondre.
                 </p>
