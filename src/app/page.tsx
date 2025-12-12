@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import Section from "@/components/Section";
 
 const categoryItems = [
   "Santé mentale",
@@ -13,7 +12,7 @@ const categoryItems = [
   "Mindfulness",
 ];
 
-type Professional = {
+/*type Professional = {
   id: string;
   name: string;
   specialty: string;
@@ -47,171 +46,248 @@ const professionals: Professional[] = [
     rating: 4.9,
     emoji: "🌿",
   },
-];
+];*/
 
 export default function HomePage() {
   return (
     <>
-      <Section className="py-16 md:py-20">
-        <div className="flex flex-row gap-5 text-center md:gap-14">
-          <div className="flex flex-col text-center">
-            <h1 className="mt-6 text-4xl font-extrabold leading-tight text-left md:text-5xl">
+      <div className="w-full px-3 sm:px-4 md:px-6 lg:px-8 py-8 md:py-16 lg:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
+          <div className="flex flex-col order-2 md:order-1">
+            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-ink">
               Your Safe Place to talk about mental health
             </h1>
-            <p className="mt-4 max-w-xl text-base text-left md:text-lg">
+            <p className="mt-4 md:mt-6 text-sm sm:text-base md:text-base lg:text-lg text-ink-soft leading-relaxed">
               Connect directly with licensed professionals through secure video consultations. Join our free, anonymous community forum for peer support. Your healing journey starts here.
             </p>
-            <div className="mt-8 flex max-w-sm flex-col gap-3">
-              <Link href="/booking" className="btn btn-brand ">Consulter un professionnel</Link>
-              <Link href="/forum" className="btn btn-ghost">Participer à un forum</Link>
+            <div className="mt-6 md:mt-8 flex flex-col gap-3 sm:gap-4 w-full sm:w-fit">
+              <Link href="/booking" className="btn px-8 sm:px-10 md:px-12 py-3 md:py-4 text-sm md:text-base lg:text-lg w-full sm:w-72 md:w-80 font-semibold text-ink" style={{ backgroundColor: '#fadf8f' }}>Consulter un professionnel</Link>
+              <Link href="/forum" className="btn px-6 sm:px-8 md:px-10 py-3 md:py-4 text-sm md:text-base lg:text-lg w-full sm:w-64 md:w-72 font-semibold text-ink" style={{ backgroundColor: '#f3dea0' }}>Participer à un forum</Link>
             </div>
-          </div>
-          <Image
-            src="/Translate-2--Streamline-Djakarta.png"
-            alt="Person speaking with a specialist online"
-            width={532}
-            height={568}
-            className="w-full max-w-lg"
-            priority
-          />
-        </div>
-      </Section>
-
-      <Section className="pb-12 pt-4">
-        <div className="grid gap-8 lg:grid-cols-2">
-          <div className="!bg-peach p-10s">
-            <div className="flex flex-col gap-6 md:flex-row md:items-center">
-              <div>
-                <h2 className="text-2xl pb-3 font-bold text-center">T&apos;as une question ?</h2>
-                <p className="text-xl">
-                  Des professionnels de santé et un forum de discussion libres et anonymes pour vous écouter et répondre.
-                </p>
+            <div className="mt-6 md:mt-8 flex items-center gap-4">
+              <div className="flex -space-x-3 flex-shrink-0">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-gray-200 border-2 border-white"></div>
+                <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-gray-200 border-2 border-white"></div>
+                <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-gray-200 border-2 border-white"></div>
+              </div>
+              <div className="text-xs sm:text-sm">
+                <p className="text-gray-500">Coach de vie, sexologue,</p>
+                <p className="text-gray-500">psychologue à votre écoute 7/7</p>
               </div>
             </div>
-            <div className="flex flex-row">
-              <div className="mt-8 grid-cols-1 gap-5 sm:grid-cols-2">
-                <Link href="/forum/new" className="btn btn-ghost mb-5">
+          </div>
+          <div className="flex justify-center order-1 md:order-2">
+            <Image
+              src="/Translate-2--Streamline-Djakarta.png"
+              alt="Person speaking with a specialist online"
+              width={532}
+              height={568}
+              className="w-full max-w-xs sm:max-w-sm md:max-w-md"
+              priority
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full px-0 py-6">
+        <div className="grid gap-0 lg:grid-cols-2">
+          <div className="p-6 md:p-8 lg:p-12" style={{ backgroundColor: '#fef7f7' }}>
+            <div>
+              <h2 className="text-xl text-center py-5 sm:text-2xl md:text-3xl font-bold text-ink mb-3 md:mb-4">T&apos;as une question</h2>
+              <p className="text-sm sm:text-base md:text-base lg:text-lg text-ink-soft leading-relaxed">
+                Des professionnels de santé et un forum de discussion libres et anonymes pour vous écouter et répondre
+              </p>
+            </div>
+            <div className="mt-6 md:mt-8 hidden md:flex gap-6 md:gap-8 items-center">
+              <div className="flex flex-col gap-2 md:gap-3">
+                <Link href="/forum/new" className="btn py-3 md:py-4 text-sm md:text-base font-semibold text-ink" style={{ backgroundColor: '#fadf8f' }}>
                   Poser une question
                 </Link>
-                <Link href="/forum" className="btn btn-ghost">
+                <Link href="/forum" className="btn py-3 md:py-4 text-sm md:text-base font-semibold text-ink" style={{ backgroundColor: '#f3dea0' }}>
                   Consulter le forum
                 </Link>
               </div>
-              <Image
-                src="/Asking-A-Question-2--Streamline-Djakarta.png"
-                alt="Question illustration"
-                width={150}
-                height={140}
-                className="w-50 drop-shadow"/>
+              <div className="flex-shrink-0">
+                <Image
+                  src="/Asking-A-Question-2--Streamline-Djakarta.png"
+                  alt="Asking a question illustration"
+                  width={243}
+                  height={218}
+                  className="w-32 md:w-48 h-auto"
+                />
+              </div>
+            </div>
+            <div className="mt-6 md:hidden flex flex-col gap-2 md:gap-3">
+              <Link href="/forum/new" className="btn py-3 md:py-4 text-sm md:text-base w-full font-semibold text-ink" style={{ backgroundColor: '#fadf8f' }}>
+                Poser une question
+              </Link>
+              <Link href="/forum" className="btn py-3 md:py-4 text-sm md:text-base w-full font-semibold text-ink" style={{ backgroundColor: '#f3dea0' }}>
+                Consulter le forum
+              </Link>
             </div>
           </div>
 
-          <div className="grid gap-8">
-            <div className="flex flex-col gap-6 md:flex-row md:items-center">
-              <div className="!bg-brand">
-                <h2 className=" text-2xl pb-3 font-bold text-center"> Discuter avec des specialistes</h2>
-                <p className="text-xl">
-                  Des professionnels de santé et un forum de discussion libres et anonymes pour vous écouter et répondre.
-                </p>
+          <div className="bg-brand p-6 py-8 md:p-8 lg:p-12">
+            <div>
+              <h2 className="text-xl text-center py-5 sm:text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4">Discuter avec des spécialistes</h2>
+              <p className="text-sm sm:text-base md:text-base lg:text-lg text-white leading-relaxed">
+                Des professionnels de santé et un forum de discussion libres et anonymes pour vous écouter et répondre
+              </p>
+            </div>
+            <div className="mt-6 md:mt-8 hidden md:flex gap-6 md:gap-8 items-center">
+              <Link href="/booking" className="btn py-3 md:py-4 bg-white text-ink hover:bg-gray-100 font-semibold text-sm md:text-base lg:text-lg">
+                Consulter un professionnel
+              </Link>
+              <div className="flex-shrink-0">
+                <Image
+                  src="/Assistant-1--Streamline-Milano.png"
+                  alt="AI Assistant Robot"
+                  width={243}
+                  height={218}
+                  className="w-32 md:w-48 h-auto"
+                />
               </div>
             </div>
-            <div className="!bg-brand flex flex-row gap-8">
-              <div className="mt-8 grid-cols-1 gap-5 sm:grid-cols-2">
-                <Link href="/forum/new" className="btn btn-ghost mb-5">
-                  Consulter un professionnel
-                </Link>
-              </div>
-              <Image
-                src="/Assistant-1--Streamline-Milano.png"
-                alt="Robot illustration"
-                width={243}
-                height={218}
-                className="w-50 drop-shadow"/>
+            <div className="mt-6 md:hidden">
+              <Link href="/booking" className="btn bg-white text-ink white-space:nowrap hover:bg-gray-100 font-semibold text-sm md:text-base lg:text-lg w-full">
+                Consulter un professionnel
+              </Link>
             </div>
           </div>
         </div>
-      </Section>
+      </div>
 
-      <Section className="pb-16">
-        <div className="grid grid-cols-2 gap-4 bg-white p-6 sm:grid-cols-4">
+      <div className="w-full px-3 sm:px-4 md:px-6 lg:px-8 py-8 md:py-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3">
           {categoryItems.map((category) => (
-            <span
+            <button
               key={category}
-              className="chip h-14 text-center text-2xl font-semibold">
+              className="chip h-12 md:h-14 bg-brand text-ink hover:opacity-90 transition-opacity text-xs sm:text-sm md:text-base font-semibold rounded-full">
               {category}
-            </span>
+            </button>
           ))}
         </div>
-      </Section>
+      </div>
 
-      <Section className="pb-20">
-        <div className="flex flex-row gap-10 justify-center content-between">
-          <div className="flex justify-center">
+      <div className="w-full px-3 sm:px-4 md:px-6 lg:px-8 py-6 md:py-8 lg:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-center" style={{ backgroundColor: '#fef7f7' }}>
+          <div className="flex justify-center order-2 lg:order-1">
             <Image
               src="/Translate-3--Streamline-Brooklyn.png"
               alt="Communauté diverse"
               width={620}
               height={527}
-              className="w-full max-w-2xl object-contain"
+              className="w-full max-w-sm md:max-w-md lg:max-w-2xl object-contain"
               priority
             />
           </div>
-          <div className="flex max-w-xl flex-col justify-center">
-            <h2 className="text-4xl font-extrabold">
+          <div className="flex flex-col justify-center order-1 lg:order-2">
+            <h2 className="text-2xl pb-5 sm:text-3xl md:text-4xl font-extrabold text-ink leading-tight">
               Where you can easily talk about your sexuality and mental health with about us
             </h2>
-            <p className="mt-4 text-1xl">
+            <p className="mt-4 md:mt-6 text-sm sm:text-base md:text-base lg:text-lg text-ink-soft leading-relaxed">
               Des professionnels de santé et un forum de discussion libres et anonymes pour vous écouter et répondre. Un espace sûr pour déposer ce que vous traversez.
             </p>
-            <p className="mt-4 text-1xl">
+            <p className="mt-4 text-sm sm:text-base md:text-base lg:text-lg text-ink-soft leading-relaxed">
               Des professionnels de santé et un forum de discussion libres et anonymes pour vous écouter et répondre. Un espace sûr pour déposer ce que vous traversez.
             </p>
           </div>
         </div>
+      </div>
 
-        <div className="mt-16 rounded-3xl bg-gradient-to-br from-brand-50 via-white to-peach px-6 py-14 text-center shadow-soft md:px-10">
-          <span className="inline-flex items-center gap-2 rounded-full bg-[#ffe7c2] px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-brand">
-            <span className="text-base">🛡️</span>
-            Licensed Mental Health Professionals
-          </span>
-
-          <h2 className="mt-6 text-3xl font-extrabold text-ink md:text-4xl">
-            Meet Our <span className="text-brand">Top</span> Professionals
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm text-ink-soft md:text-base">
-            Connect with experienced, board-certified therapists ready to support your mental health journey with empathy, expertise, and a personalised care plan.
-          </p>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {professionals.map((pro) => (
-              <article
-                key={pro.id}
-                className="flex flex-col items-center gap-4 rounded-3xl bg-white/80 p-6 text-center shadow-soft transition-transform hover:-translate-y-1 hover:shadow-lg"
-              >
-                <div className="relative">
-                  <span className="grid h-16 w-16 place-items-center rounded-full bg-brand text-2xl">
-                    {pro.emoji}
-                  </span>
-                  <span className="absolute -bottom-2 left-1/2 flex -translate-x-1/2 items-center gap-1 rounded-full bg-white px-2 py-0.5 text-xs font-semibold text-brand shadow-soft">
-                    ⭐ {pro.rating.toFixed(1)}
-                  </span>
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-ink">{pro.name}</h3>
-                  <p className="text-sm font-medium text-ink-soft">{pro.specialty}</p>
-                  <p className="text-sm font-semibold text-brand">{pro.experience}</p>
-                </div>
-              </article>
-            ))}
+      <div className="w-full px-3 sm:px-4 md:px-6 lg:px-8 py-8 md:py-16 lg:py-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-ink leading-tight mb-4">
+              Discussion du moment
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            {/* Forum posts will be dynamically populated from API */}
+            <div className="rounded-2xl md:rounded-3xl bg-brand p-4 md:p-6 pb-8 md:pb-10 text-white shadow-soft hover:shadow-lg transition-shadow">
+              <p className="text-xs md:text-sm font-medium mb-3">Par Adams 21</p>
+              <p className="text-sm md:text-base leading-relaxed mb-4">
+                Je suis depressive depuis que j&apos;ai changé d&apos;environnement
+              </p>
+              <div className="flex gap-4 text-xs font-medium">
+                <span>Messages: 5</span>
+                <span>Réponses: 10</span>
+                <span>Réaction: 10</span>
+              </div>
+            </div>
+            <div className="rounded-2xl md:rounded-3xl bg-brand p-4 md:p-6 pb-8 md:pb-10 text-white shadow-soft hover:shadow-lg transition-shadow">
+              <p className="text-xs md:text-sm font-medium mb-3">Par Adams 21</p>
+              <p className="text-sm md:text-base leading-relaxed mb-4">
+                Je suis depressive depuis que j&apos;ai changé d&apos;environnement
+              </p>
+              <div className="flex gap-4 text-xs font-medium">
+                <span>Messages: 5</span>
+                <span>Réponses: 10</span>
+                <span>Réaction: 10</span>
+              </div>
+            </div>
+            <div className="rounded-2xl md:rounded-3xl bg-brand p-4 md:p-6 pb-8 md:pb-10 text-white shadow-soft hover:shadow-lg transition-shadow">
+              <p className="text-xs md:text-sm font-medium mb-3">Par Adams 21</p>
+              <p className="text-sm md:text-base leading-relaxed mb-4">
+                Je suis depressive depuis que j&apos;ai changé d&apos;environnement
+              </p>
+              <div className="flex gap-4 text-xs font-medium">
+                <span>Messages: 5</span>
+                <span>Réponses: 10</span>
+                <span>Réaction: 10</span>
+              </div>
+            </div>
+            <div className="rounded-2xl md:rounded-3xl p-4 md:p-6 text-ink shadow-soft hover:shadow-lg transition-shadow" style={{ backgroundColor: '#fef7f7' }}>
+              <p className="text-xs md:text-sm font-medium mb-3">Par Adams 21</p>
+              <p className="text-sm md:text-base leading-relaxed mb-4">
+                Je suis depressive depuis que j&apos;ai changé d&apos;environnement
+              </p>
+              <div className="flex gap-4 text-xs font-medium">
+                <span>Messages: 5</span>
+                <span>Réponses: 10</span>
+                <span>Réaction: 10</span>
+              </div>
+            </div>
+            <div className="rounded-2xl md:rounded-3xl p-4 md:p-6 text-ink shadow-soft hover:shadow-lg transition-shadow" style={{ backgroundColor: '#fef7f7' }}>
+              <p className="text-xs md:text-sm font-medium mb-3">Par Adams 21</p>
+              <p className="text-sm md:text-base leading-relaxed mb-4">
+                Je suis depressive depuis que j&apos;ai changé d&apos;environnement
+              </p>
+              <div className="flex gap-4 text-xs font-medium">
+                <span>Messages: 5</span>
+                <span>Réponses: 10</span>
+                <span>Réaction: 10</span>
+              </div>
+            </div>
+            <div className="rounded-2xl md:rounded-3xl p-4 md:p-6 text-ink shadow-soft hover:shadow-lg transition-shadow" style={{ backgroundColor: '#fef7f7' }}>
+              <p className="text-xs md:text-sm font-medium mb-3">Par Adams 21</p>
+              <p className="text-sm md:text-base leading-relaxed mb-4">
+                Je suis depressive depuis que j&apos;ai changé d&apos;environnement
+              </p>
+              <div className="flex gap-4 text-xs font-medium">
+                <span>Messages: 5</span>
+                <span>Réponses: 10</span>
+                <span>Réaction: 10</span>
+              </div>
+            </div>
           </div>
 
-          <div className="mt-10">
-            <Link href="/specialistes" className="btn btn-brand px-8 text-sm font-semibold">
-              Voir tous les spécialistes
+          <div className="mt-12 md:mt-16 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
+            <div className="flex-shrink-0">
+              <Image
+                src="/Question-Mark-Line--Streamline-Variable-Scribbles.png"
+                alt="Question mark"
+                width={120}
+                height={120}
+                className="w-26 md:w-40 h-auto"
+              />
+            </div>
+            <Link href="/forum" className="btn btn-brand px-8 md:px-10 py-3 md:py-4 text-sm md:text-base font-semibold w-72 md:w-96">
+              Participer au Forum
             </Link>
           </div>
         </div>
-      </Section>
+      </div>
     </>
   );
 }
