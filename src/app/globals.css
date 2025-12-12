@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --brand: #ffa62b;
-  --brand-50: #fff5e0;
-  --brand-100: #ffe3b8;
-  --peach: #ffd8a8;
+  --brand: #ffa54e;
+  --brand-50: #fef7f7;
+  --brand-100: #fadf8f;
+  --peach: #f3dea0;
   --ink: #1f2937;
   --ink-soft: #4b5563;
-  --line: #f3f4f6;
-  --line-strong: #e5e7eb;
-  --surface: #fff9f2;
+  --line: #f0f2f5;
+  --line-strong: #e8eaed;
+  --surface: #fef7f7;
 }
 
 * {
@@ -22,7 +22,7 @@ body {
   padding: 0;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
-  background: #fffdfa;
+  background: #ffffff;
   min-height: 100%;
 }
 
@@ -31,6 +31,9 @@ body {
   flex-direction: column;
 }
 
+header {
+  background-color: #f0f2f5;
+}
 
 
 main {
@@ -87,10 +90,11 @@ p {
 .btn-brand {
   background: var(--brand);
   color: #1f1f1f;
+  border: none;
 }
 
 .btn-brand:hover {
-  background: #f59e0b;
+  background: #ff9429;
 }
 
 .btn-ghost {
@@ -104,13 +108,13 @@ p {
 }
 
 .btn-light {
-  background: var(--brand-50);
+  background: var(--brand);
   color: var(--ink);
-  border: 1px solid var(--brand-100);
+  border: none;
 }
 
 .btn-light:hover {
-  background: var(--brand-100);
+  background: #ff9429;
 }
 
 input:not([type="checkbox"]):not([type="radio"]),
@@ -155,13 +159,13 @@ select:focus {
   font-weight: 600;
   background: var(--brand);
   color: #1f1f1f;
-  box-shadow: 0 8px 20px -12px rgba(255, 166, 43, 0.9);
+  box-shadow: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .chip:hover {
   transform: translateY(-1px);
-  box-shadow: 0 16px 32px -18px rgba(255, 166, 43, 0.8);
+  box-shadow: none;
 }
 
 .shadow-soft {
